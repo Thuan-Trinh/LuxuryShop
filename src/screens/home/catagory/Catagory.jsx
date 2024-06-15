@@ -13,21 +13,21 @@ const Catagory = () => {
                     <div className="top">
                         <div className="item1 cata-small">
                             <span className='cata-title'>Sandals</span>
-                            <img src="../product-images/sandal.webp" alt="preview" />
+                            <img src="../assets/product-images/sandal.webp" alt="preview" />
                         </div>
                         <div className="item2 cata-big">
                             <span className='cata-title'>Cao Gót</span>
-                            <img src="../product-images/caogot.webp" alt="preview" />
+                            <img src="../assets/product-images/caogot.webp" alt="preview" />
                         </div>
                     </div>
                     <div className="bottom">
                         <div className="item3 cata-big">
                             <span className='cata-title'>Dép Kẹp Ngón</span>
-                            <img src="../product-images/kepngon.webp" alt="preview" />
+                            <img src="../assets/product-images/kepngon.webp" alt="preview" />
                         </div>
                         <div className="item4 cata-small">
                             <span className='cata-title'>Dép Lê</span>
-                            <img src="../product-images/deple.webp" alt="preview" />
+                            <img src="../assets/product-images/deple.webp" alt="preview" />
                         </div>
                     </div>
                 </div>

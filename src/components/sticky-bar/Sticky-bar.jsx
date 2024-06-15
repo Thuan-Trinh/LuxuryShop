@@ -9,9 +9,9 @@ function StickBar() {
         <strong style={{ color: '#F59E0B' }}>Đặt hàng ngay!</strong>
       </p>
       <div className="sticky-bar-imgs">
-        <img src='../../../public/images/ic-shopee.svg' alt="ic-shopee" />
-        <img src='../../../public/images/ic-tiktok.svg' alt="ic-tiktok" />
-        <img src='../../../public/images/ic-lazada.svg' alt="ic-lazada" />
+        <img src='../../../assets/images/ic-shopee.svg' alt="ic-shopee" />
+        <img src='../../../assets/images/ic-tiktok.svg' alt="ic-tiktok" />
+        <img src='../../../assets/images/ic-lazada.svg' alt="ic-lazada" />
       </div>
     </section>
   );

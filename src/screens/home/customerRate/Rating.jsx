@@ -69,12 +69,12 @@ const Rating = () => {
                 </div>
                 {showRightButton && (
                     <button className="icon-right" onClick={scrollRight}>
-                        <img src='../public/images/ic-next.svg' alt="icon" />
+                        <img src='../assets/images/ic-next.svg' alt="icon" />
                     </button>
                 )}
                 {showLeftButton && (
                     <button className="icon-left" onClick={scrollLeft}>
-                        <img src='../public/images/ic-previous.svg' alt="icon" />
+                        <img src='../assets/images/ic-previous.svg' alt="icon" />
                     </button>
                 )}
             </div>

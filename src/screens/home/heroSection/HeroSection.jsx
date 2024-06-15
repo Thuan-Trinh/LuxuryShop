@@ -16,7 +16,7 @@ const HeroSection = () => {
                 </div>
 
                 <div className="hero-right-side">
-                    <img src='../../../public/images/hero_img.webp' alt="hero-img" />
+                    <img src='../../../assets/images/hero_img.webp' alt="hero-img" />
                 </div>
             </div>
         </section>

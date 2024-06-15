@@ -6,8 +6,8 @@ function Header() {
             <div className="header-container">
                 <div className="header">
                     <div className="shop-logo-header">
-                        <img src='../../../public/images/ic-logo-black.svg' alt="ic-logo-black" />
-                        <img src='../../../public/images/logo-text-black.svg' alt="logo-text-black" />
+                        <img src='../../../assets/images/ic-logo-black.svg' alt="ic-logo-black" />
+                        <img src='../../../assets/images/logo-text-black.svg' alt="logo-text-black" />
                     </div>
                     <nav className="nav-header">
                         <ul>
@@ -22,7 +22,7 @@ function Header() {
                         </ul>
                     </nav>
                     <div className="search-field">
-                        <img src='../../../public/images/ic-search.svg' alt="ic-search" />
+                        <img src='../../../assets/images/ic-search.svg' alt="ic-search" />
                         <input type="search" placeholder="Tìm kiếm" className="search-input" />
                     </div>
                 </div>

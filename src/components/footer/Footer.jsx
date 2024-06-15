@@ -10,7 +10,7 @@ const Footer = () => {
             </div>
             <div className="footer-wrapper">
                 <div className="footerLeft">
-                    <img src='../../../public/images/logo-white.svg' alt="logo-white" />
+                    <img src='../../../assets/images/logo-white.svg' alt="logo-white" />
                     <p>Shop có chính sách bảo hành trả hàng hoặc hoàn tiền 6 ngày kể từ ngày nhận sản phẩm nếu có lỗi từ phía Shop.</p>
                 </div>
                 <div className="footerRight">
@@ -23,19 +23,19 @@ const Footer = () => {
                     <div className="contact">
                         <div className="infor">
                             <div className="infor-icon">
-                                <img src='../../../public/images/ic-phone.svg' alt="icon" />
+                                <img src='../../../assets/images/ic-phone.svg' alt="icon" />
                             </div>
                             <span>0387.640.174</span>
                         </div>
                         <div className="infor">
                             <div className="infor-icon">
-                                <img src='../../../public/images/ic-email.svg' alt="icon" />
+                                <img src='../../../assets/images/ic-email.svg' alt="icon" />
                             </div>
                             <span>Email us</span>
                         </div>
                         <div className="infor">
                             <div className="infor-icon">
-                                <img src='../../../public/images/ic-mess.svg' alt="icon" />
+                                <img src='../../../assets/images/ic-mess.svg' alt="icon" />
                             </div>
                             <span>Message us</span>
                         </div>
