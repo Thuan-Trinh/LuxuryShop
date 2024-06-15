@@ -1,0 +1,30 @@
+.footer-banner {
+    display: flex;
+    padding: 32px 80px;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 0 0;
+    border-radius: 24px;
+    background: var(--color-neutral-900);
+}
+
+.footer-banner h1 {
+    width: 50%;
+    font-family: "Mulish";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 56px;
+    color: var(--color-neutral-50);
+}
+
+.onlineShop {
+    display: flex;
+    align-items: flex-start;
+    gap: 64px;
+}
+
+.footer-banner .onlineShop img {
+    width: 80px;
+    height: 80px;
+}

@@ -1,0 +1,98 @@
+/* Statistical data */
+#statistical-data {
+  background-color: var(--color-neutral-900);
+}
+
+.statistical-data {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 3rem 150px;
+  margin: 0 auto;
+}
+
+.service-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.service-list .service-card {
+  width: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  flex: 1 0 0;
+  gap: 1rem;
+}
+
+.service-list .service-card img {
+  width: 3.75rem;
+  height: 3.75rem;
+}
+
+.service-list .service-card .service-detail {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+}
+
+.service-list .service-card .service-detail span:first-child {
+  color: var(--color-neutral-50);
+  font-family: "Mulish";
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 2.25rem;
+}
+
+.service-list .service-card .service-detail span:last-child {
+  color: var(--color-neutral-400);
+  font-family: "Mulish";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem;
+}
+
+.statistical-data .data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.statistical-data .data .data-detail {
+  width: calc(100%/3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.statistical-data .data .data-detail:not(:last-child) {
+  border-right: 1px solid var(--color-neutral-600);
+}
+
+.statistical-data .data .data-detail span:first-child {
+  color: var(--color-neutral-50);
+  font-family: "Mulish";
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 3rem;
+}
+
+.statistical-data .data .data-detail span:last-child {
+  color: var(--color-neutral-400);
+  font-family: "Mulish";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem;
+}

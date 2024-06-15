@@ -1,0 +1,30 @@
+/* sticky bar */
+.sticky-bar {
+  background-color: var(--color-neutral-900);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 0.75rem 9.375rem;
+
+  color: var(--color-neutral-50);
+  font-family: "Mulish";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5rem;
+  z-index: 2;
+}
+
+.sticky-bar .sticky-bar-imgs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sticky-bar .sticky-bar-imgs img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
