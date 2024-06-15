@@ -1,5 +1,7 @@
 /* sticky bar */
 .sticky-bar {
+  position: sticky;
+  top: 0;
   background-color: var(--color-neutral-900);
 
   display: flex;
