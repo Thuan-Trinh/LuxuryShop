@@ -7,6 +7,11 @@ import './products.css';
 
 const Products = () => {
     const [selectedCategory, setSelectedCategory] = useState('');
+    const [styleBtn, setStyleBtn] = useState(
+        {
+            background: "var(--color-neutral-200)",
+            color: 'var(--color-neutral-900)'
+        })
     const [currentPage, setCurrentPage] = useState(1);
     const productsPerPage = 9;
 
@@ -20,9 +25,15 @@ const Products = () => {
     }
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
+        window.scrollTo(0, 0);
     };
     const handleCategoryChange = (event) => {
-        setSelectedCategory(event.target.value);
+        const value = event.target.value;
+        setSelectedCategory(selectedCategory === value ? '' : value);
+        setStyleBtn({
+            background: "var(--color-neutral-900)",
+            color: 'var(--color-neutral-50)'
+        })
     };
     return (
         <div className='allProductsPage'>
@@ -31,7 +42,7 @@ const Products = () => {
                 <div className="breadcrumms">
                     <span><NavLink activeClassName="active" to="/">Trang chủ</NavLink></span>
                     <img src="../../assets/images/ic_arrow_right.svg" alt="" />
-                    <span><NavLink exact activeClassName="active" to="/products">Sản phẩm</NavLink></span>
+                    <span>Sản phẩm</span>
                 </div>
                 <div className="displayProducts">
                     <div className="filterBar">
@@ -42,7 +53,7 @@ const Products = () => {
                         <div className="category-filter">
                             <div className="category">
                                 <input
-                                    type="radio"
+                                    type="checkbox"
                                     id="dep-le"
                                     name="dep"
                                     value="Dép lê"
@@ -53,7 +64,7 @@ const Products = () => {
                             </div>
                             <div className="category">
                                 <input
-                                    type="radio"
+                                    type="checkbox"
                                     id="dep-xang-dan"
                                     name="dep"
                                     value="Dép xăng đan"
@@ -64,7 +75,7 @@ const Products = () => {
                             </div>
                             <div className="category">
                                 <input
-                                    type="radio"
+                                    type="checkbox"
                                     id="dep-kep-ngon"
                                     name="dep"
                                     value="Dép kẹp ngón"
@@ -75,7 +86,7 @@ const Products = () => {
                             </div>
                             <div className="category">
                                 <input
-                                    type="radio"
+                                    type="checkbox"
                                     id="dep-cao-got"
                                     name="dep"
                                     value="Dép cao gót"
@@ -88,14 +99,14 @@ const Products = () => {
                         <div className="price-filter">
                             <span>Giá:</span>
                             <div className="input-price">
-                                <input type="number" placeholder='Giá thấp nhất' value='0' />
+                                <input type="number" placeholder='min' />
                                 <div className='from-to'></div>
-                                <input type="number" placeholder='Giá cao nhất' value='0' />
+                                <input type="number" placeholder='max' />
                             </div>
                         </div>
-                        <div className="btn-confirm">
+                        <button className="btn-confirm" style={styleBtn} >
                             Áp dụng lọc
-                        </div>
+                        </button>
                     </div>
                     <div className="allProductsListContainer">
                         <div className="productListTitle">
@@ -112,24 +123,28 @@ const Products = () => {
                         </div>
                         <div className="pageNav">
                             <button
-                            className='prev'
-                            onClick={() => handlePageChange(currentPage > 1 ? currentPage - 1 : currentPage)}>
+                                className={currentPage == 1 ? 'hidden' : 'navPageBtn activeNavPage'}
+                                onClick={() => handlePageChange(currentPage > 1 ? currentPage - 1 : currentPage)}>
                                 <img src="../../assets/images/ic-previous.svg" alt="prev" />
                                 <span>Previous</span>
                             </button>
                             <div className="pagination">
                                 {pageNumbers.map(number => (
-                                    <button key={number} onClick={() => handlePageChange(number)}>
+                                    <button
+                                        key={number}
+                                        onClick={() => handlePageChange(number)}
+                                        className={number === currentPage ? 'activePage' : ''}
+                                    >
                                         {number}
                                     </button>
                                 ))}
                             </div>
                             <button
-                            className='next'
-                            onClick={() => handlePageChange(currentPage < pageNumbers.length ? currentPage + 1 : currentPage)}
+                                className={currentPage == pageNumbers.length ? 'hidden' : 'navPageBtn activeNavPage'}
+                                onClick={() => handlePageChange(currentPage < pageNumbers.length ? currentPage + 1 : currentPage)}
                             >
-                                <img src="../../assets/images/ic-next.svg" alt="next" />
                                 <span>Next</span>
+                                <img src="../../assets/images/ic-next.svg" alt="next" />
                             </button>
                         </div>
                     </div>
