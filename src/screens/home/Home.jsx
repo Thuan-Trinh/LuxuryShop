@@ -1,12 +1,8 @@
-
-// import StickBar from '../../components/sticky-bar/Sticky-bar.jsx';
-// import Header from '../../components/header/Header.jsx';
 import HeroSection from './heroSection/HeroSection.jsx';
 import StatisticalData from './statisticalData/StatisticalData.jsx';
 import HomeSection from './homeSection/HomeSection.jsx';
 import Catagory from './catagory/Catagory.jsx';
 import Rating from './customerRate/Rating.jsx';
-// import Footer from '../../components/footer/Footer.jsx';
 import useCountdown from './homeSection/count_down.jsx';
 import products from './homeSection/productsArray.js';
 
@@ -40,7 +36,6 @@ function Home() {
         smallTitle='smallTitle'
         section={products}
         filterProduct={filterNewProduct}
-        page='./contacts'
       />
       <HomeSection
         sectionName='topProducts'
@@ -50,7 +45,6 @@ function Home() {
         smallTitle='smallTitle'
         section={products}
         filterProduct={filterTopProduct}
-        page='./cart'
       />
       <Catagory />
       <Rating />
