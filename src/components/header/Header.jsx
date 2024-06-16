@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import "./Header.css";
 function Header() {
     return (
@@ -11,10 +12,11 @@ function Header() {
                     </div>
                     <nav className="nav-header">
                         <ul>
-                            <li><a href="#" className="active">Trang chủ</a></li>
-                            <li><a href="#">Sản phẩm</a></li>
-                            <li><a href="#">Liên hệ & FAQ</a></li>
-                            <li><a href="#">Giỏ hàng</a>
+                            <li><NavLink exact activeClassName="active" to="/">Trang chủ</NavLink></li>
+                            <li><NavLink activeClassName="active" to="/products">Sản phẩm</NavLink></li>
+                            <li><NavLink activeClassName="active" to="/contacts">Liên hệ</NavLink></li>
+                            <li>
+                                <NavLink activeClassName="active" to="/cart">Giỏ hàng</NavLink>
                                 <span>(</span>
                                 <span className="cart-count">0</span>
                                 <span>)</span>
@@ -27,7 +29,8 @@ function Header() {
                     </div>
                 </div>
             </div>
-        </header>
+        </header >
+
     )
 }
 ;

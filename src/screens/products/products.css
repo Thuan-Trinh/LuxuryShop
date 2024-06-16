@@ -1,0 +1,7 @@
+.allProductsPage{
+    display: flex;
+    padding-top: 24px;
+    padding-bottom: 168px;
+    flex-direction: column;
+    gap: 24px;
+}

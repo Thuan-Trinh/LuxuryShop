@@ -1,8 +1,11 @@
 import React from 'react';
 import ProductCard from './ProductCard.jsx';
+import { useNavigate } from 'react-router-dom';
 import './HomeSection.css';
 const HomeSection = (props) => {
+  const navigate= useNavigate();
   const {
+    page,
     sectionName,
     sectionTitle,
     bigTitle,
@@ -34,7 +37,7 @@ const HomeSection = (props) => {
         )}
       </div>
 
-      <button className="secondary-btn">
+      <button className="secondary-btn"  onClick={() => navigate(page)}>
         <span>Xem thêm</span>
       </button>
     </div>
