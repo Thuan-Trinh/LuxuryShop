@@ -1,7 +1,75 @@
-.allProductsPage{
+.allProductsPage {
     display: flex;
     padding-top: 24px;
     padding-bottom: 168px;
     flex-direction: column;
     gap: 24px;
+}
+
+.productContainer {
+    max-width: 1440px;
+    padding: 0px 150px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.displayProducts {
+    width: 100%;
+    display: flex;
+    gap: 24px;
+}
+
+.displayProducts .filterBar {
+    display: flex;
+    width: 267px;
+    height: fit-content;
+    padding: 24px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    border-radius: 12px;
+    border: 2px solid var(--color-neutral-200);
+}
+
+.displayProducts .allProductsListContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.displayProducts .allProductsListContainer .productListTitle {
+    display: flex;
+    width: 100%;
+    padding: 6px 0px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.displayProducts .allProductsListContainer .productListTitle span {
+    color: var(--color-neutral-900);
+    text-align: center;
+
+    /* Title/32/Bold */
+    font-family: "Mulish";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    /* 125% */
+}
+
+.allProductList {
+    display: flex;
+    padding-bottom: 32px;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.allProductList .product-card{
+    width: calc(100%/3 - 16px);
 }

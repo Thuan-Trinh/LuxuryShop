@@ -27,7 +27,7 @@ const Products = () => {
     return (
         <div className='allProductsPage'>
             <Banner />
-            <div className="container">
+            <div className="productContainer">
                 <div className="breadcrumms">
                     <span><NavLink activeClassName="active" to="/">Trang chủ</NavLink></span>
                     <img src="../../assets/images/ic_arrow_right.svg" alt="" />
