@@ -5,6 +5,7 @@ import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Home from './screens/home/Home.jsx';
 import Products from './screens/products/products.jsx';
+import FlashSaleProducts from './screens/flash-sale-products/flash-sale-products.jsx';
 import './App.css';
 
 
@@ -18,6 +19,7 @@ const App = () => {
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/products' element={<Products />} />
+                <Route path='flash-sale-products' element={<FlashSaleProducts />} />
             </Routes>
             <Footer />
         </>

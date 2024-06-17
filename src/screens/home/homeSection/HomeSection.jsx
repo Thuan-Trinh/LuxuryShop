@@ -3,8 +3,9 @@ import ProductCard from './ProductCard.jsx';
 import { useNavigate } from 'react-router-dom';
 import './HomeSection.css';
 const HomeSection = (props) => {
-  const navigate= useNavigate();
+  const navigate = useNavigate();
   const {
+    children,
     page,
     sectionName,
     sectionTitle,
@@ -22,10 +23,10 @@ const HomeSection = (props) => {
       <div className='product-list container'>
         {filterProduct.length >= 1 ? (
           <>
-            {filterProduct.slice(0, 4).map((card) => (
+            {filterProduct.map((card) => (
               <ProductCard
-              {...card}
-              key={card.id}
+                {...card}
+                key={card.id}
                 productImage={card.productImage[0]}
               />
             ))}
@@ -36,10 +37,7 @@ const HomeSection = (props) => {
           </>
         )}
       </div>
-
-      <button className="secondary-btn"  onClick={() => navigate(page)}>
-        <span>Xem thêm</span>
-      </button>
+      {children}
     </div>
   );
 };

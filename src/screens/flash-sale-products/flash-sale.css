@@ -1,0 +1,10 @@
+.banner{
+    padding: 24px 0;
+}
+.wrapper {
+    max-width: 1440px;
+    display: flex;
+    align-items: start;
+    padding: 0 150px 24px;
+    margin: 0 auto;
+}

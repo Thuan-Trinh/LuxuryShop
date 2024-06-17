@@ -1,0 +1,7 @@
+.productSuggested{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 0 144px;
+    gap: 24px;
+}

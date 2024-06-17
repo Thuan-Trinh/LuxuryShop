@@ -1,110 +1,119 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: 0;
-  }
-  @font-face {
-    font-family: 'Mulish';
-    src: url('./assets/font/Mulish-VariableFont_wght.ttf') format('truetype');
-    /* Add other font properties like font-weight and font-style if needed */
-  }
-  
-  :root {
-    font-family: "Mulish", sans-serif;
-    font-size: 16px;
-  
-    /* neutral colors */
-    --color-neutral-white: #ffffff;
-    --color-neutral-50: #f8fafc;
-    --color-neutral-100: #f1f5f9;
-    --color-neutral-200: #e2e8f0;
-    --color-neutral-300: #cbd5e1;
-    --color-neutral-400: #94a3b8;
-    --color-neutral-500: #64748b;
-    --color-neutral-600: #475569;
-    --color-neutral-700: #334155;
-    --color-neutral-800: #1e293b;
-    --color-neutral-900: #0f172a;
-  
-    /* success colors */
-    --color-success-50: #ecfdf5;
-    --color-success-100: #d1fae5;
-    --color-success-200: #a7f3d0;
-    --color-success-300: #6ee7b7;
-    --color-success-400: #34d399;
-    --color-success-500: #10b981;
-    --color-success-600: #059669;
-    --color-success-700: #047857;
-    --color-success-800: #065f46;
-    --color-success-900: #064e3b;
-  
-    /* warning colors */
-    --color-warning-50: #fffbeb;
-    --color-warning-100: #fef3c7;
-    --color-warning-200: #fde68a;
-    --color-warning-300: #fcd34d;
-    --color-warning-400: #fbbf24;
-    --color-warning-500: #f59e0b;
-    --color-warning-600: #d97706;
-    --color-warning-700: #b45309;
-    --color-warning-800: #92400e;
-    --color-warning-900: #78350f;
-  
-    /* error colors */
-    --color-error-50: #fef2f2;
-    --color-error-100: #fee2e2;
-    --color-error-200: #fecaca;
-    --color-error-300: #fca5a5;
-    --color-error-400: #f87171;
-    --color-error-500: #ef4444;
-    --color-error-600: #dc2626;
-    --color-error-700: #b91c1c;
-    --color-error-800: #991b1b;
-    --color-error-900: #7f1d1d;
-  
-    --border-img: 1rem;
-    --border-cta-btn: 0.5rem;
-  }
-  
-  input {
-    padding: 0;
-    margin: 0;
-    /* appearance: none; */
-    box-sizing: none;
-    padding-block: none;
-    padding-inline: none;
-    outline: none;
-    border: none;
-  }
-  
-  h1,
-  span,
-  p,
-  a {
-    text-decoration: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  h1 {
-    color: var(--color-neutral-900);
-    font-family: "Mulish";
-    font-size: 3.5rem;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 5rem;
-  }
-  
-  .body {
-  
-    background-color: var(--color-neutral-50);
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    max-width: 1440px;
-    padding: 0px 150px;
-    margin: 0px auto;
-  }
-  
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('./assets/font/Mulish-VariableFont_wght.ttf') format('truetype');
+  /* Add other font properties like font-weight and font-style if needed */
+}
+
+:root {
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+
+  /* neutral colors */
+  --color-neutral-white: #ffffff;
+  --color-neutral-50: #f8fafc;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-300: #cbd5e1;
+  --color-neutral-400: #94a3b8;
+  --color-neutral-500: #64748b;
+  --color-neutral-600: #475569;
+  --color-neutral-700: #334155;
+  --color-neutral-800: #1e293b;
+  --color-neutral-900: #0f172a;
+
+  /* success colors */
+  --color-success-50: #ecfdf5;
+  --color-success-100: #d1fae5;
+  --color-success-200: #a7f3d0;
+  --color-success-300: #6ee7b7;
+  --color-success-400: #34d399;
+  --color-success-500: #10b981;
+  --color-success-600: #059669;
+  --color-success-700: #047857;
+  --color-success-800: #065f46;
+  --color-success-900: #064e3b;
+
+  /* warning colors */
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-200: #fde68a;
+  --color-warning-300: #fcd34d;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+  --color-warning-800: #92400e;
+  --color-warning-900: #78350f;
+
+  /* error colors */
+  --color-error-50: #fef2f2;
+  --color-error-100: #fee2e2;
+  --color-error-200: #fecaca;
+  --color-error-300: #fca5a5;
+  --color-error-400: #f87171;
+  --color-error-500: #ef4444;
+  --color-error-600: #dc2626;
+  --color-error-700: #b91c1c;
+  --color-error-800: #991b1b;
+  --color-error-900: #7f1d1d;
+
+  --border-img: 1rem;
+  --border-cta-btn: 0.5rem;
+}
+
+input {
+  padding: 0;
+  margin: 0;
+  /* appearance: none; */
+  box-sizing: none;
+  padding-block: none;
+  padding-inline: none;
+  outline: none;
+  border: none;
+}
+
+h1,
+span,
+p,
+a {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  color: var(--color-neutral-900);
+  font-family: "Mulish";
+  font-size: 3.5rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 5rem;
+}
+
+h3 {
+  color: var(--color-neutral-900);
+  font-family: "Mulish";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 56px;
+}
+
+body {
+
+  background-color: var(--color-neutral-50);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0px 150px;
+  margin: 0px auto;
+}
