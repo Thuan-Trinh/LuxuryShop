@@ -40,11 +40,10 @@ function Home() {
         section={products}
         filterProduct={filterNewProduct.slice(0, 4)}
       >
-        <button className="secondary-btn" onClick={() => navigate('/newArrivals')}>
+        <button className="secondary-btn" onClick={() => navigate('/new-arrivals')}>
           <span>Xem thêm</span>
         </button>
       </HomeSection>
-
 
       <HomeSection
         sectionName='topProducts'
@@ -55,7 +54,7 @@ function Home() {
         section={products}
         filterProduct={filterTopProduct.slice(0, 4)}
       >
-        <button className="secondary-btn" onClick={() => navigate('/topProducts')}>
+        <button className="secondary-btn" onClick={() => navigate('/top-sell')}>
           <span>Xem thêm</span>
         </button>
       </HomeSection>

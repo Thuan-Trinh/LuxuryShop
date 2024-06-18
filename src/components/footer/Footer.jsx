@@ -1,6 +1,7 @@
 import React from 'react';
 import Banner from '../shopBanner/Banner';
 import './footer.css';
+import { NavLink, Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -15,9 +16,9 @@ const Footer = () => {
                 </div>
                 <div className="footerRight">
                     <div className="nav-footer">
-                        <span>Trang chủ</span>
-                        <span>Sản phẩm</span>
-                        <span>Hàng mới về</span>
+                        <span onClick={() => { window, scrollTo(0, 0) }}><NavLink to='/'>Trang chủ</NavLink></span>
+                        <span onClick={() => { window, scrollTo(0, 0) }}><NavLink to='/products'>Sản phẩm</NavLink></span>
+                        <span onClick={() => { window, scrollTo(0, 0) }}><NavLink to='/new-arrivals'>Hàng mới về</NavLink></span>
                         <span>Liên hệ</span>
                     </div>
                     <div className="contact">
@@ -31,18 +32,17 @@ const Footer = () => {
                             <div className="infor-icon">
                                 <img src='../../../assets/images/ic-email.svg' alt="icon" />
                             </div>
-                            <span>Email us</span>
+                            <span>Gửi email</span>
                         </div>
                         <div className="infor">
                             <div className="infor-icon">
                                 <img src='../../../assets/images/ic-mess.svg' alt="icon" />
                             </div>
-                            <span>Message us</span>
+                            <span><a href='https://m.me/thuantrinh.vn?hash=AbY2WtdDVdyosLoZ&source=qr_link_share' target='_blank'>Nhắn tin</a></span>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }

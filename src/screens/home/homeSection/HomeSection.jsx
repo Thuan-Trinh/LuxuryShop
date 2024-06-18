@@ -1,12 +1,9 @@
 import React from 'react';
 import ProductCard from './ProductCard.jsx';
-import { useNavigate } from 'react-router-dom';
 import './HomeSection.css';
 const HomeSection = (props) => {
-  const navigate = useNavigate();
   const {
     children,
-    page,
     sectionName,
     sectionTitle,
     bigTitle,
