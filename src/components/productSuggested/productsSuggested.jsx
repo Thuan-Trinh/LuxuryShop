@@ -23,6 +23,7 @@ const ProductsSuggested = () => {
     useEffect(() => {
         const shuffledProducts = shuffleArray([...products]).slice(0, 4);
         setSelectedProducts(shuffledProducts);
+        window.scrollTo(0, 0);
     }, []);
     return (
         <div className='productSuggested'>
