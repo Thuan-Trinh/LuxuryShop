@@ -37,7 +37,6 @@ function Home() {
         bigTitle='HÀNG MỚI VỀ'
         littleTitle='Sản phẩm mới đã cập bến Luxury Shop! Nhanh tay lựa ngay deal hời các tình yêu ơi <3'
         smallTitle='smallTitle'
-        section={products}
         filterProduct={filterNewProduct.slice(0, 4)}
       >
         <button className="secondary-btn" onClick={() => navigate('/new-arrivals')}>
@@ -51,7 +50,6 @@ function Home() {
         bigTitle='TOP BÁN CHẠY'
         littleTitle='Các sản phẩm được nhiều khách hàng ủng hộ tại Luxury Shop'
         smallTitle='smallTitle'
-        section={products}
         filterProduct={filterTopProduct.slice(0, 4)}
       >
         <button className="secondary-btn" onClick={() => navigate('/top-sell')}>

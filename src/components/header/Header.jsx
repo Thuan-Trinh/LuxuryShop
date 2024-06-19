@@ -12,9 +12,9 @@ function Header() {
                     </div>
                     <nav className="nav-header">
                         <ul>
-                            <li><NavLink exact activeClassName="active" to="/">Trang chủ</NavLink></li>
-                            <li><NavLink activeClassName="active" to="/products">Sản phẩm</NavLink></li>
-                            <li><NavLink activeClassName="active" to="/contacts">Liên hệ</NavLink></li>
+                            <li onClick={() => { window, scrollTo(0, 0) }}><NavLink exact activeClassName="active" to="/">Trang chủ</NavLink></li>
+                            <li onClick={() => { window, scrollTo(0, 0) }}><NavLink activeClassName="active" to="/products">Sản phẩm</NavLink></li>
+                            <li onClick={() => { window, scrollTo(0, 0) }}><NavLink activeClassName="active" to="/contacts">Liên hệ</NavLink></li>
                             <li>
                                 <NavLink activeClassName="active" to="/cart">Giỏ hàng</NavLink>
                                 <span>(</span>

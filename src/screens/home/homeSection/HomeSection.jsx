@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductCard from './ProductCard.jsx';
+import SectionTitle from './SectionTitle.jsx';
 import './HomeSection.css';
 const HomeSection = (props) => {
   const {
@@ -8,14 +9,17 @@ const HomeSection = (props) => {
     sectionTitle,
     bigTitle,
     littleTitle,
+    smallTitle,
     filterProduct
   } = props;
   return (
     <div className={sectionName}>
-      <div className={sectionTitle}>
-        <span className='bigTitle'>{bigTitle}</span>
-        <span className={props.smallTitle}>{littleTitle}</span>
-      </div>
+      <SectionTitle
+      sectionTitle={sectionTitle}
+      bigTitle={bigTitle}
+      littleTitle={littleTitle}
+      smallTitle={smallTitle}
+      />
 
       <div className='product-list container'>
         {filterProduct.length >= 1 ? (
