@@ -174,7 +174,6 @@ p.product-title {
     justify-content: space-between;
     align-items: center;
     gap: 0.5rem;
-
     position: absolute;
     left: 1rem;
     top: 1rem;
@@ -182,7 +181,7 @@ p.product-title {
 
 .product-card .tags div {
     display: flex;
-    width: 3.5rem;
+    width: 5rem;
     padding: 0.5rem 1rem;
     justify-content: center;
     align-items: center;
