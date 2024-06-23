@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './HeroSection.css';
 
 const HeroSection = () => {
+    const navigate = useNavigate();
     return (
         <section id="hero-section">
             <div className="hero-section container">
@@ -12,7 +14,13 @@ const HeroSection = () => {
                         <p>Dép Xinh Luxury Shop luôn mong muốn mang đến cho bạn những sản phẩm chất lượng với giá thành phải
                             chăng nhất!</p>
                     </div>
-                    <button id="cta-btn" className="cta-btn"><span>Mua ngay</span></button>
+                    <button
+                        id="cta-btn"
+                        className="cta-btn"
+                        onClick={() => navigate('/products')}
+                    >
+                        <span>Mua ngay</span>
+                    </button>
                 </div>
 
                 <div className="hero-right-side">

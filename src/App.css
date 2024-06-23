@@ -117,3 +117,9 @@ body {
   padding: 0px 150px;
   margin: 0px auto;
 }
+
+
+
+dl, ol, ul{
+  margin: 0;
+}

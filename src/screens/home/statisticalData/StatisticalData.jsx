@@ -6,27 +6,29 @@ import DataDetail from './DataDetail.jsx';
 import './StatisticalData.css';
 const StatisticalData = () => {
     return (
-        <section id="statistical-data" className='statistical-data'>
-            <div className="service-list">
-                {serviceCardList.map((item) => (
-                    <ServiceCard
-                        key={item.id}
-                        image={item.image}
-                        title={item.title}
-                        detail={item.detail}
-                    />
-                ))}
-            </div>
-            <div className="data">
-                {
-                    dataDetailList.map((item) => (
-                        <DataDetail
+        <section id="statistical-data" >
+            <div className='statistical-data'>
+                <div className="service-list">
+                    {serviceCardList.map((item) => (
+                        <ServiceCard
                             key={item.id}
-                            number={item.number}
+                            image={item.image}
+                            title={item.title}
                             detail={item.detail}
                         />
-                    ))
-                }
+                    ))}
+                </div>
+                <div className="data">
+                    {
+                        dataDetailList.map((item) => (
+                            <DataDetail
+                                key={item.id}
+                                number={item.number}
+                                detail={item.detail}
+                            />
+                        ))
+                    }
+                </div>
             </div>
         </section>
     )
