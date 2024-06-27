@@ -1,3 +1,5 @@
+import Catagory from "../catagory/Catagory";
+
 const products = [
     {
         id: "1000003",
@@ -70,7 +72,8 @@ const products = [
         icFlash: "../assets/images/ic-flash.svg",
         coupon: "-46.7%",
         tag: "",
-        saleTag: 'SALE'
+        saleTag: 'SALE',
+        catagory: 'Dép lê'
     },
     {
         id: "1000004",
@@ -140,8 +143,8 @@ const products = [
         icFlash: "../assets/images/ic-flash.svg",
         coupon: "-46.7%",
         tag: "",
-        saleTag: 'SALE'
-
+        saleTag: 'SALE',
+        catagory: 'Dép lê'
     },
 
     {
@@ -198,8 +201,8 @@ const products = [
         icFlash: "../assets/images/ic-flash.svg",
         coupon: "-46%",
         tag: "",
-        saleTag: 'SALE'
-
+        saleTag: 'SALE',
+        catagory: 'Cao gót'
     },
     {
         id: "1000014",
@@ -260,8 +263,8 @@ const products = [
         icFlash: "../assets/images/ic-flash.svg",
         coupon: "-37.5%",
         tag: "",
-        saleTag: 'SALE'
-
+        saleTag: 'SALE',
+        catagory: 'Dép lê'
     },
     {
         id: "1000015",
@@ -315,7 +318,9 @@ const products = [
         icFlash: "../assets/images/ic-flash.svg",
         coupon: "-47%",
         tag: "NEW",
-        saleTag: ''
+        saleTag: '',
+        catagory: 'Dép lê'
+
     },
     {
         id: "1000021",
@@ -375,7 +380,8 @@ const products = [
         icFlash: "../assets/images/ic-flash.svg",
         coupon: "-38%",
         tag: "NEW",
-        saleTag: ''
+        saleTag: '',
+        catagory: 'Cao gót'
 
     },
     {
@@ -445,8 +451,8 @@ const products = [
         icFlash: "../assets/images/ic-flash.svg",
         coupon: "-41%",
         tag: "NEW",
-        saleTag: ''
-
+        saleTag: '',
+        catagory: 'Xăng đan'
     },
     {
         id: "1000037",
@@ -515,8 +521,8 @@ const products = [
         icFlash: "../assets/images/ic-flash.svg",
         coupon: "-38.5%",
         tag: "NEW",
-        saleTag: ''
-
+        saleTag: '',
+        catagory: 'Kẹp ngón'
     },
     {
         id: "1000041",
@@ -567,8 +573,8 @@ const products = [
         icFlash: "../assets/images/ic-flash.svg",
         coupon: "-43%",
         tag: "TOP",
-        saleTag: ''
-
+        saleTag: '',
+        catagory: 'Xăng đan'
     },
     {
         id: "1000043",
@@ -640,7 +646,8 @@ const products = [
         icFlash: "../assets/images/ic-flash.svg",
         coupon: "-40%",
         tag: "TOP",
-        saleTag: ''
+        saleTag: '',
+        catagory: 'Cao gót'
 
     },
     {
@@ -700,8 +707,8 @@ const products = [
         icFlash: "../assets/images/ic-flash.svg",
         coupon: "-36%",
         tag: "TOP",
-        saleTag: ''
-
+        saleTag: '',
+        catagory: 'Kẹp ngón'
     },
     {
         id: "1000046",
@@ -760,8 +767,8 @@ const products = [
         icFlash: "../assets/images/ic-flash.svg",
         coupon: "-38%",
         tag: "TOP",
-        saleTag: ''
-
+        saleTag: '',
+        catagory: 'Cao gót'
     },
 
     // Thêm các phần tử khác vào mảng tương tự như trên
