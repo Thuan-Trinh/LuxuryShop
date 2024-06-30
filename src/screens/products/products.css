@@ -1,7 +1,7 @@
 
 .productContainer {
     max-width: 1440px;
-    padding: 0px 150px;
+    padding: 0px 150px 144px 150px;
     margin: 0px auto;
     display: flex;
     flex-direction: column;
