@@ -1,37 +1,37 @@
 import React from 'react'
-const ProductCard = (props) => {
+const ProductCard = ({ tag, coupon, handleShowProductDetail, productImage, id, productName, star, star2, saleTag, icFlash, realPrice, fakePrice, }) => {
     return (
         <div className="product-card">
-            <div className="card-img">
-                <img src={props.productImage} alt={props.id} className="preview-img" />
+            <div className="card-img" onClick={() => handleShowProductDetail()}>
+                <img src={productImage} alt={id} className="preview-img" />
             </div>
             <div className="card-infor">
                 <p className="product-title">
-                    {props.productName}
+                    {productName}
                 </p>
                 <div className="rating">
                     <div className="rating-stars">
-                        <img src={props.star} alt={props.star} />
-                        <img src={props.star} alt={props.star} />
-                        <img src={props.star} alt={props.star} />
-                        <img src={props.star} alt={props.star} />
-                        <img src={props.star2} alt={props.star2} />
+                        <img src={star} alt={star} />
+                        <img src={star} alt={star} />
+                        <img src={star} alt={star} />
+                        <img src={star2} alt={star2} />
+                        <img src={star} alt={star} />
                     </div>
-                    {props.saleTag &&
+                    {saleTag &&
                         <div className="tags-flash-sale show">
-                            <img src={props.icFlash} alt={props.icFlash} />
-                            <span>{props.saleTag}</span>
+                            <img src={icFlash} alt={icFlash} />
+                            <span>{saleTag}</span>
                         </div>
                     }
                 </div>
                 <div className="price">
-                    <span className="real-price">{props.realPrice}</span>
-                    <span className="fake-price">{props.fakePrice}</span>
+                    <span className="real-price">{realPrice}</span>
+                    <span className="fake-price">{fakePrice}</span>
                 </div>
             </div>
             <div className="tags">
-                {props.tag && <div className={props.tag}><span>{props.tag}</span></div>}
-                {props.coupon && <div className="tag-coupon"><span>{props.coupon}</span></div>}
+                {tag && <div className={tag}><span>{tag}</span></div>}
+                {coupon && <div className="tag-coupon"><span>{coupon}</span></div>}
             </div>
         </div>
     )

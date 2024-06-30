@@ -1,7 +1,7 @@
 import React from 'react';
 import Banner from '../shopBanner/Banner';
 import './footer.css';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -19,7 +19,7 @@ const Footer = () => {
                         <span onClick={() => { window, scrollTo(0, 0) }}><NavLink to='/'>Trang chủ</NavLink></span>
                         <span onClick={() => { window, scrollTo(0, 0) }}><NavLink to='/products'>Sản phẩm</NavLink></span>
                         <span onClick={() => { window, scrollTo(0, 0) }}><NavLink to='/new-arrivals'>Hàng mới về</NavLink></span>
-                        <span>Liên hệ</span>
+                        <span onClick={() => { window, scrollTo(0, 0) }}><NavLink to='/contacts'>Liên hệ</NavLink></span>
                     </div>
                     <div className="contact">
                         <div className="infor">
