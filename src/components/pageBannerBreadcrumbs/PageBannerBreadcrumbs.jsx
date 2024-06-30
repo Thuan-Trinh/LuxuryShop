@@ -1,8 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Banner from '../shopBanner/Banner';
+import './pageBannerBreacrums.css';
 
-const PageBannerBreadcrumbs = ({title}) => {
+const PageBannerBreadcrumbs = ({children}) => {
     return (
         <>
             <div className="banner">
@@ -10,11 +11,9 @@ const PageBannerBreadcrumbs = ({title}) => {
             </div>
             <div className="wrapper">
                 <div className="breadcrumms">
-                    <span><NavLink activeClassName="active" to="/">Trang chủ</NavLink></span>
+                    <NavLink activeClassName="active" to="/"><span>Trang chủ</span></NavLink>
                     <img src="../../assets/images/ic_arrow_right.svg" alt="" />
-                    <span><NavLink activeClassName="active" to="/products">Sản phẩm</NavLink></span>
-                    <img src="../../assets/images/ic_arrow_right.svg" alt="" />
-                    <span>{title}</span>
+                    {children}
                 </div>
             </div>
         </>

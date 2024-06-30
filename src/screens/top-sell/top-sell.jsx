@@ -3,16 +3,19 @@ import PageBannerBreadcrumbs from '../../components/pageBannerBreadcrumbs/PageBa
 import HomeSection from '../home/homeSection/HomeSection';
 import ProductsSuggested from '../../components/productSuggested/productsSuggested';
 import products from '../home/homeSection/productsArray';
-
+import { NavLink } from 'react-router-dom';
 
 const filterTopProduct = products.filter((card) => card.tag === 'TOP');
 
 const TopSell = () => {
     return (
         <>
-            <PageBannerBreadcrumbs
-                title='Top bán chạy'
-            />
+            <PageBannerBreadcrumbs>
+                <NavLink activeClassName="active" to="/products"><span>Sản phẩm</span></NavLink>
+                <img src="../../assets/images/ic_arrow_right.svg" alt="" />
+                <a><span>Top bán chạy</span></a>
+
+            </PageBannerBreadcrumbs>
             <HomeSection
                 sectionName='topProducts'
                 sectionTitle='topSeller'

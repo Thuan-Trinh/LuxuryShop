@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import Banner from '../../components/shopBanner/Banner';
 import products from '../home/homeSection/productsArray';
 import ProductCard from '../home/homeSection/ProductCard';
+import PageBannerBreadcrumbs from '../../components/pageBannerBreadcrumbs/PageBannerBreadcrumbs';
 import { NavLink } from 'react-router-dom';
-import Contacts from '../contacts/Contacts';
 import './products.css';
 
 const Products = () => {
@@ -79,20 +78,17 @@ const Products = () => {
     };
 
     return (
-        <div className='allProductsPage'>
-            <Banner />
+        <div>
+            <PageBannerBreadcrumbs>
+                <NavLink onClick={() => handleBackToProducts()}><span>Sản phẩm</span></NavLink>
+                {showProductDetail && selectedCard &&
+                    <>
+                        <img src="../../assets/images/ic_arrow_right.svg" alt="" />
+                        <a><span>{selectedCard.productName}</span></a>
+                    </>
+                }
+            </PageBannerBreadcrumbs>
             <div className="productContainer">
-                <div className="breadcrumms">
-                    <NavLink activeClassName="active" to="/"><span>Trang chủ</span></NavLink>
-                    <img src="../../assets/images/ic_arrow_right.svg" alt="" />
-                    <NavLink onClick={() => handleBackToProducts()}><span>Sản phẩm</span></NavLink>
-                    {showProductDetail && selectedCard &&
-                        <>
-                            <img src="../../assets/images/ic_arrow_right.svg" alt="" />
-                            <a><span>{selectedCard.productName}</span></a>
-                        </>
-                    }
-                </div>
                 {showProducts &&
                     <div className="displayProducts">
                         <div className="filterBar">
@@ -156,7 +152,9 @@ const Products = () => {
                     </div>
                 }
                 {showProductDetail && selectedCard &&
-                    <p>đây là trang chi tiết sản phẩm</p>
+                    <div className="productDetail">
+                        <p>đây là trang chi tiết sản phẩm fsdhsdkgasdl gágklhasdlghsdgklhsdgklhasgklahg lỉeagier hgerigherighegheilkgheigheraighergliheglnv neve nvelvbeigberib</p>
+                    </div>
                 }
             </div>
         </div >
