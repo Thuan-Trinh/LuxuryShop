@@ -1,8 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import ProductCard from './ProductCard.jsx';
 import SectionTitle from './SectionTitle.jsx';
 import './HomeSection.css';
 const HomeSection = (props) => {
+  const navigate = useNavigate();
+  const handleProductClick = (product) => {
+    navigate(`/products/${product.id}`);
+    window.scrollTo(0, 0);
+  };
   const {
     children,
     sectionName,
@@ -12,6 +18,7 @@ const HomeSection = (props) => {
     smallTitle,
     filterProduct
   } = props;
+  
   return (
     <div className={sectionName}>
       <SectionTitle
@@ -29,6 +36,7 @@ const HomeSection = (props) => {
                 {...card}
                 key={card.id}
                 productImage={card.productImage[0]}
+                handleShowProductDetail={() => handleProductClick(card)}
               />
             ))}
           </>

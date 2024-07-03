@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import products from '../home/homeSection/productsArray';
 import ProductCard from '../home/homeSection/ProductCard';
 import PageBannerBreadcrumbs from '../../components/pageBannerBreadcrumbs/PageBannerBreadcrumbs';
-import { NavLink } from 'react-router-dom';
 import './products.css';
 
 const Products = () => {
@@ -10,10 +10,6 @@ const Products = () => {
     const [selectedFilter, setSelectedFilter] = useState('Tất cả');
     const [selectedFilterPrice, setSelectedFilterPrice] = useState('');
     const [filteredProducts, setFilteredProducts] = useState(products);
-    const [selectedCard, setSeledtedCard] = useState(null);
-
-    const [showProducts, setShowProducts] = useState(true);
-    const [showProductDetail, setShowProductDetail] = useState(false);
 
     const filterCatagory = ['Tất cả', 'Dép lê', 'Xăng đan', 'Kẹp ngón', 'Cao gót'];
     const filterPrice = ['Giá thấp đến cao', 'Giá cao đến thấp'];
@@ -61,17 +57,11 @@ const Products = () => {
         setCurrentPage(1);
     }
 
-    const handleShowProductDetail = (cardInfo) => {
-        setShowProductDetail(true);
-        setShowProducts(false);
-        setSeledtedCard(cardInfo);
-        console.log('b da click');
-    }
-
-    const handleBackToProducts = () => {
-        setShowProductDetail(false);
-        setShowProducts(true);
-    }
+    const navigate = useNavigate();
+    const handleProductClick = (product) => {
+        navigate(`/products/${product.id}`);
+        window.scrollTo(0, 0)
+    };
 
     const convertPrice = (priceString) => {
         return parseInt(priceString.replace(/[^0-9]/g, ''), 10);
@@ -79,83 +69,68 @@ const Products = () => {
 
     return (
         <div>
-            <PageBannerBreadcrumbs>
-                <NavLink onClick={() => handleBackToProducts()}><span>Sản phẩm</span></NavLink>
-                {showProductDetail && selectedCard &&
-                    <>
-                        <img src="../../assets/images/ic_arrow_right.svg" alt="" />
-                        <a><span>{selectedCard.productName}</span></a>
-                    </>
-                }
-            </PageBannerBreadcrumbs>
+            <PageBannerBreadcrumbs />
             <div className="productContainer">
-                {showProducts &&
-                    <div className="displayProducts">
-                        <div className="filterBar">
-                            {filterCatagory.map((filter) => (
-                                <button
-                                    key={filter}
-                                    className={filter === selectedFilter ? 'selected' : ''}
-                                    onClick={() => handleFilterCatagoryClick(filter)}
-                                >
-                                    {filter}
-                                </button>
-                            ))}
-                            {filterPrice.map((filter) => (
-                                <button
-                                    key={filter}
-                                    className={filter === selectedFilterPrice ? 'selected' : ''}
-                                    onClick={() => handleFilterPriceClick(filter)}
-                                >
-                                    {filter}
-                                </button>
+                <div className="displayProducts">
+                    <div className="filterBar">
+                        {filterCatagory.map((filter) => (
+                            <button
+                                key={filter}
+                                className={filter === selectedFilter ? 'selected' : ''}
+                                onClick={() => handleFilterCatagoryClick(filter)}
+                            >
+                                {filter}
+                            </button>
+                        ))}
+                        {filterPrice.map((filter) => (
+                            <button
+                                key={filter}
+                                className={filter === selectedFilterPrice ? 'selected' : ''}
+                                onClick={() => handleFilterPriceClick(filter)}
+                            >
+                                {filter}
+                            </button>
+                        ))}
+                    </div>
+                    <div className="allProductsListContainer">
+                        <div className="allProductList">
+                            {currentProducts.map((card) => (
+                                <ProductCard
+                                    key={card.id}
+                                    {...card}
+                                    productImage={card.productImage[0]}
+                                    handleShowProductDetail={() => handleProductClick(card)}
+                                />
                             ))}
                         </div>
-                        <div className="allProductsListContainer">
-                            <div className="allProductList">
-                                {currentProducts.map((card) => (
-                                    <ProductCard
-                                        key={card.id}
-                                        {...card}
-                                        productImage={card.productImage[0]}
-                                        handleShowProductDetail={() => handleShowProductDetail(card)}
-                                    />
+                        <div className="pageNav">
+                            <button
+                                className={currentPage == 1 ? 'hidden' : 'navPageBtn activeNavPage'}
+                                onClick={() => handlePageChange(currentPage > 1 ? currentPage - 1 : currentPage)}>
+                                <img src="../../assets/images/ic-previous.svg" alt="prev" />
+                                <span>Previous</span>
+                            </button>
+                            <div className="pagination">
+                                {pageNumbers.map(number => (
+                                    <button
+                                        key={number}
+                                        onClick={() => handlePageChange(number)}
+                                        className={number === currentPage ? 'activePage' : ''}
+                                    >
+                                        {number}
+                                    </button>
                                 ))}
                             </div>
-                            <div className="pageNav">
-                                <button
-                                    className={currentPage == 1 ? 'hidden' : 'navPageBtn activeNavPage'}
-                                    onClick={() => handlePageChange(currentPage > 1 ? currentPage - 1 : currentPage)}>
-                                    <img src="../../assets/images/ic-previous.svg" alt="prev" />
-                                    <span>Previous</span>
-                                </button>
-                                <div className="pagination">
-                                    {pageNumbers.map(number => (
-                                        <button
-                                            key={number}
-                                            onClick={() => handlePageChange(number)}
-                                            className={number === currentPage ? 'activePage' : ''}
-                                        >
-                                            {number}
-                                        </button>
-                                    ))}
-                                </div>
-                                <button
-                                    className={currentPage == pageNumbers.length ? 'hidden' : 'navPageBtn activeNavPage'}
-                                    onClick={() => handlePageChange(currentPage < pageNumbers.length ? currentPage + 1 : currentPage)}
-                                >
-                                    <span>Next</span>
-                                    <img src="../../assets/images/ic-next.svg" alt="next" />
-                                </button>
-                            </div>
+                            <button
+                                className={currentPage == pageNumbers.length ? 'hidden' : 'navPageBtn activeNavPage'}
+                                onClick={() => handlePageChange(currentPage < pageNumbers.length ? currentPage + 1 : currentPage)}
+                            >
+                                <span>Next</span>
+                                <img src="../../assets/images/ic-next.svg" alt="next" />
+                            </button>
                         </div>
                     </div>
-                }
-                {showProductDetail && selectedCard &&
-                    <div className="productDetail">
-                        <p>đây là trang chi tiết sản phẩm fsdhsdkgasdl gágklhasdlghsdgklhsdgklhasgklahg lỉeagier hgerigherighegheilkgheigheraighergliheglnv neve nvelvbeigberib</p>
-                    </div>
-                }
+                </div>
             </div>
         </div >
     )

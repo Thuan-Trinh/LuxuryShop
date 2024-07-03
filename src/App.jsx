@@ -9,6 +9,7 @@ import FlashSaleProducts from './screens/flash-sale-products/flash-sale-products
 import NewArrivals from './screens/new-arrivals/new-arrivals.jsx';
 import TopSell from './screens/top-sell/top-sell.jsx';
 import Contacts from './screens/contacts/Contacts.jsx';
+import ProductDetails from './screens/products/productDetails.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -21,11 +22,12 @@ const App = () => {
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/products' element={<Products />}>
-                    <Route path='contacts' element={<Contacts />} />
+
                 </Route>
-                <Route path='flash-sale-products' element={<FlashSaleProducts />} />
-                <Route path='new-arrivals' element={<NewArrivals />} />
-                <Route path='top-sell' element={<TopSell />} />
+                <Route path='/products/:id' element={<ProductDetails />} />
+                <Route path='/products/flash-sale-products' element={<FlashSaleProducts />} />
+                <Route path='/products/new-arrivals' element={<NewArrivals />} />
+                <Route path='/products/top-sell' element={<TopSell />} />
                 <Route path='/contacts' element={<Contacts />} />
             </Routes>
             <Footer />

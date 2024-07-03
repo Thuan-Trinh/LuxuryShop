@@ -26,7 +26,7 @@ function Home() {
         smallTitle='countdown'
         filterProduct={filterSaleProduct.slice(0, 4)}
       >
-        <button className="secondary-btn" onClick={() => navigate('/flash-sale-products')}>
+        <button className="secondary-btn" onClick={() => navigate('/products/flash-sale-products')}>
           <span>Xem thêm</span>
         </button>
       </HomeSection>
@@ -39,7 +39,7 @@ function Home() {
         smallTitle='smallTitle'
         filterProduct={filterNewProduct.slice(0, 4)}
       >
-        <button className="secondary-btn" onClick={() => navigate('/new-arrivals')}>
+        <button className="secondary-btn" onClick={() => navigate('/products/new-arrivals')}>
           <span>Xem thêm</span>
         </button>
       </HomeSection>
@@ -52,7 +52,7 @@ function Home() {
         smallTitle='smallTitle'
         filterProduct={filterTopProduct.slice(0, 4)}
       >
-        <button className="secondary-btn" onClick={() => navigate('/top-sell')}>
+        <button className="secondary-btn" onClick={() => navigate('/products/top-sell')}>
           <span>Xem thêm</span>
         </button>
       </HomeSection>

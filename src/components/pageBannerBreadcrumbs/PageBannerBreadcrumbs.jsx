@@ -13,6 +13,7 @@ const PageBannerBreadcrumbs = ({children}) => {
                 <div className="breadcrumms">
                     <NavLink activeClassName="active" to="/"><span>Trang chủ</span></NavLink>
                     <img src="../../assets/images/ic_arrow_right.svg" alt="" />
+                    <NavLink activeClassName="active" to="/products"><span>Sản phẩm</span></NavLink>
                     {children}
                 </div>
             </div>

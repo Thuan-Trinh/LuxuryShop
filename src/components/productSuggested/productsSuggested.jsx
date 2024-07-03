@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ProductCard from '../../screens/home/homeSection/ProductCard';
 import products from '../../screens/home/homeSection/productsArray';
 import './products-suggest.css'
@@ -20,6 +21,12 @@ const shuffleArray = (array) => {
 const ProductsSuggested = () => {
     const [selectedProducts, setSelectedProducts] = useState([]);
 
+    const navigate = useNavigate();
+    const handleProductClick = (product) => {
+        navigate(`/products/${product.id}`);
+        window.scrollTo(0, 0);
+    };
+
     useEffect(() => {
         const shuffledProducts = shuffleArray([...products]).slice(0, 4);
         setSelectedProducts(shuffledProducts);
@@ -34,6 +41,7 @@ const ProductsSuggested = () => {
                         {...card}
                         key={card.id}
                         productImage={card.productImage[0]}
+                        handleShowProductDetail={() => handleProductClick(card)}
                     />
                 ))}
             </div>
