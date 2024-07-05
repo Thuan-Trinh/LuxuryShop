@@ -1,0 +1,350 @@
+.product-brief {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.display-product {
+    width: calc(100%*7/12);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    flex-shrink: 0;
+    align-self: stretch;
+}
+
+.display-img {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1.5px solid var(--color-neutral-300);
+    background: var(--color-neutral-white);
+}
+
+.display-img button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 8px 8px;
+    border-radius: 8px;
+    background-color: var(--color-neutral-100);
+}
+
+.display-img img {
+    height: 100%;
+}
+
+.preview-product-img {
+    width: 100%;
+    gap: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.preview-product-img .product-img {
+    display: flex;
+    width: 96px;
+    height: 96px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    border: 1.5px solid var(--color-neutral-300);
+    background: var(--color-neutral-white);
+    overflow: hidden;
+}
+
+.text1 {
+    color: var(--color-neutral-900);
+    font-family: "Mulish";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.text2 {
+    color: var(--color-neutral-900);
+    font-family: "Mulish";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+.brief-product {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex: 1 0 0;
+}
+
+.brief-product .product-price {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brief-product .product-price span.realPrice {
+    color: var(--color-error-500);
+    font-family: "Mulish";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 36px;
+}
+
+.brief-product .product-price span.fakePrice {
+    color: var(--color-neutral-400);
+    font-family: "Mulish";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px;
+    text-decoration-line: line-through;
+}
+
+.brief-product .product-price span.saleTag {
+    color: var(--color-error-500);
+    font-family: "Mulish";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 16px;
+    letter-spacing: 0.6px;
+    text-decoration-line: none;
+}
+
+.brief-product .product-price .tags-flash-sale {
+    display: flex;
+    padding: 6px 8px;
+    align-items: center;
+    gap: 2px;
+    border-radius: 14px;
+    border: 1px solid var(--color-error-200);
+    background: var(--color-error-50);
+}
+
+.brief-product .rating-stars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.brief-product .sortScript {
+    color: var(--color-neutral-500);
+    font-family: "Mulish";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--color-neutral-200);
+}
+
+span.title {
+    color: var(--color-neutral-500);
+    font-family: "Mulish";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.color-pick,
+.size-pick {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 4px 0 16px 0;
+    border-bottom: 1px solid var(--color-neutral-200);
+}
+
+.color-pick button {
+    display: flex;
+    min-width: 90px;
+    padding: 8px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 20px;
+    background: var(--color-neutral-200);
+    border: none;
+    color: var(--color-neutral-900);
+    text-align: center;
+    font-family: "Mulish";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.color-pick button.selectedColor {
+    color: var(--color-neutral-50);
+    background: var(--color-neutral-900);
+}
+
+.size-pick .available {
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+    gap: 12px;
+    border-radius: 26px;
+    background: var(--color-neutral-200);
+    border: none;
+}
+
+.size-pick .available span {
+    width: 32px;
+    flex: 1 0 0;
+    color: var(--color-neutral-900);
+    text-align: center;
+    font-family: "Mulish";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.size-pick .disabled {
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+    gap: 12px;
+    border-radius: 26px;
+    border: none;
+    background: var(--color-neutral-200);
+}
+
+.size-pick .disabled span {
+    width: 32px;
+    flex: 1 0 0;
+    color: var(--color-neutral-400);
+    text-align: center;
+    font-family: "Mulish";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.cta-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+
+.cta-btns .count-product {
+    display: flex;
+    min-width: 170px;
+    padding: 14px 24px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    border-radius: 26px;
+    border: 1.5px solid var(--color-neutral-900);
+}
+
+.cta-btns .count-product span {
+    min-width: 52px;
+    flex: 1 0 0;
+    color: var(--color-neutral-900);
+    text-align: center;
+    font-family: "Mulish";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.cta-btns .add-product {
+    display: flex;
+    min-width: 170px;
+    padding: 14px 24px;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex: 1 0 0;
+    border: none;
+    border-radius: 26px;
+    background: var(--color-neutral-900);
+
+    color: var(--color-neutral-50);
+    text-align: center;
+    font-family: "Mulish";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.cta-btns .buy-now {
+    display: flex;
+    min-width: 170px;
+    padding: 14px 24px;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex: 1 0 0;
+    border: none;
+    border-radius: 26px;
+    background: var(--color-error-500);
+
+    color: var(--color-neutral-50);
+    text-align: center;
+    font-family: "Mulish";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.buying-method {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    padding-top: 8px;
+}
+
+.buying-method .buy-online,
+.buying-method .direct-contact {
+    display: flex;
+    height: 52px;
+    min-width: 170px;
+    padding: 14px 24px;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex: 1 0 0;
+    border: none;
+    border-radius: 26px;
+
+    color: var(--color-neutral-50);
+    text-align: center;
+    font-family: "Mulish";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.buying-method .buy-online {
+    background: var(--color-success-500);
+}
+
+.buying-method .direct-contact{
+    background: var(--color-warning-500);
+}

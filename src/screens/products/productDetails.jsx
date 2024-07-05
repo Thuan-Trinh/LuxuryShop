@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import products from '../home/homeSection/productsArray';
 import PageBannerBreadcrumbs from '../../components/pageBannerBreadcrumbs/PageBannerBreadcrumbs';
 import ProductsSuggested from '../../components/productSuggested/productsSuggested';
-
+import './product_detail.css'
 const ProductDetails = () => {
     const { id } = useParams();
     const product = products.find((product) => product.id === id);
@@ -31,10 +31,6 @@ const ProductDetails = () => {
         setSelectedColor(productStock[0].color);
     }, [product]);
 
-    // const handleImageClick = (img) => {
-    //     setSelectedImage(img);
-    // };
-
     const handleColorChange = (color) => {
         setSelectedColor(color);
     };
@@ -58,6 +54,7 @@ const ProductDetails = () => {
         setSelectedImage(productImage[0]);
         setShowBtn(true)
     }
+
     const selectedProductStock = productStock.find(stock => stock.color === selectedColor);
 
     return (
@@ -71,11 +68,15 @@ const ProductDetails = () => {
                     <div className="display-product">
                         <div className="display-img">
                             {showBtn &&
-                                <button className='previousImg' onClick={handlePreviousImage}>{"<"}</button>
+                                <button className='previousImg' onClick={handlePreviousImage}>
+                                    <img src="../assets/images/ic-previous-2.svg" alt="" />
+                                </button>
                             }
                             <img src={selectedImage} alt="display-img" />
                             {showBtn &&
-                                <button className='nextImg' onClick={handleNextImage}>{">"}</button>
+                                <button className='nextImg' onClick={handleNextImage}>
+                                    <img src="../assets/images/ic-next-2.svg" alt="" />
+                                </button>
                             }
                         </div>
                         <div className="preview-product-img">
@@ -96,12 +97,12 @@ const ProductDetails = () => {
                     </div>
                     <div className="brief-product">
                         <div className="product-price">
-                            <span>{realPrice}</span>
-                            <span>{fakePrice}</span>
+                            <span className='realPrice'>{realPrice}</span>
+                            <span className='fakePrice'>{fakePrice}</span>
                             {saleTag && (
-                                <div className="tags-flash-sale show">
+                                <div className="tags-flash-sale">
                                     <img src={icFlash} alt="flash sale icon" />
-                                    <span>{saleTag}</span>
+                                    <span className='saleTag'>{saleTag}</span>
                                 </div>
                             )}
                         </div>
@@ -112,8 +113,8 @@ const ProductDetails = () => {
                             <img src={star} alt="star" />
                             <img src={star2} alt="half star" />
                         </div>
-                        <p>{sortScript}</p>
-                        <span>Chọn màu</span>
+                        <p className='sortScript'>{sortScript}</p>
+                        <span className='title'>Chọn màu</span>
                         <div className="color-pick">
                             {productStock.map((stock) => (
                                 <button
@@ -125,25 +126,33 @@ const ProductDetails = () => {
                                 </button>
                             ))}
                         </div>
-                        <span>Chọn size</span>
+                        <span className='title'>Chọn size</span>
                         <div className="size-pick">
                             {selectedProductStock.store.map((store, index) => (
                                 <button
                                     key={`${selectedColor}-${store.size}-${index}`}
                                     className={store.stock > 0 ? 'available' : 'disabled'}
                                 >
-                                    {store.size}
+                                    <span>{store.size}</span>
                                 </button>
                             ))}
                         </div>
                         <div className="cta-btns">
                             <div className="count-product">
-                                {/* Add your product count logic here */}
+                                <img
+                                src="../assets/images/ic-minus.svg"
+                                alt="minus"
+                                />
+                                <span>0</span>
+                                <img
+                                src="../assets/images/ic-add.svg"
+                                alt="add"
+                                />
                             </div>
-                            <button>Thêm vào giỏ hàng</button>
-                            <button>Mua ngay</button>
+                            <button className='add-product'>Thêm vào giỏ hàng</button>
+                            <button className='buy-now'>Mua ngay</button>
                         </div>
-                        <span>Hoặc chọn phương thức mua khác</span>
+                        <span className='title'>Hoặc chọn phương thức mua khác</span>
                         <div className="buying-method">
                             <button className="buy-online">Mua qua sàn online</button>
                             <button className="direct-contact">Liên hệ trực tiếp</button>

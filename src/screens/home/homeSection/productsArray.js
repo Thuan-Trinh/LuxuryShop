@@ -21,8 +21,8 @@ const products = [
             {
                 color: 'Đen',
                 store: [
-                    { size: 36, stock: 10 },
-                    { size: 37, stock: 10 },
+                    { size: 36, stock: 0 },
+                    { size: 37, stock: 0 },
                     { size: 38, stock: 10 },
                     { size: 39, stock: 10 },
                 ]
@@ -37,7 +37,7 @@ const products = [
                 ]
             },
             {
-                color: 'Cam Đất',
+                color: 'Cam',
                 store: [
                     { size: 36, stock: 10 },
                     { size: 37, stock: 10 },

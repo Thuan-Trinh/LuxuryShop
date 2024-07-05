@@ -178,13 +178,14 @@
     background: var(--color-neutral-white);
 }
 
-.display-img button{
- display: flex;
- align-items: center;
- justify-content: center;
- border: none;
- padding: 8px 12px;
- border-radius: 4px;
+.display-img button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 8px 8px;
+    border-radius: 8px;
+    background-color: var(--color-neutral-100);
 }
 
 .display-img img {
