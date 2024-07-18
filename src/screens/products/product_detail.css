@@ -194,7 +194,26 @@ span.title {
     color: var(--color-neutral-50);
     background: var(--color-neutral-900);
 }
-
+.size-pick .selectedSize{
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+    gap: 12px;
+    border-radius: 26px;
+    background: var(--color-neutral-900);
+    border: none;
+}
+.size-pick .selectedSize span{
+    width: 32px;
+    flex: 1 0 0;
+    color: var(--color-neutral-50);
+    text-align: center;
+    font-family: "Mulish";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+}
 .size-pick .available {
     display: flex;
     padding: 10px 20px;

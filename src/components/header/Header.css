@@ -54,16 +54,6 @@ header{
   line-height: 1.5rem;
   text-decoration: none;
   color: var(--color-neutral-500);
-
-}
-
-.header .nav-header ul li span {
-  font-family: "Mulish";
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.5rem;
-  color: var(--color-neutral-500);
 }
 
 .header .nav-header ul li a.active {
@@ -73,12 +63,6 @@ header{
   font-weight: 800;
   line-height: 1.5rem;
   color: var(--color-neutral-900);
-}
-
-.header .nav-header ul li:last-child {
-  display: flex;
-  align-items: center;
-  gap: 0.125rem;
 }
 
 .header .search-field {

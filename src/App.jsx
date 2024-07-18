@@ -10,13 +10,14 @@ import NewArrivals from './screens/new-arrivals/new-arrivals.jsx';
 import TopSell from './screens/top-sell/top-sell.jsx';
 import Contacts from './screens/contacts/Contacts.jsx';
 import ProductDetails from './screens/products/productDetails.jsx';
+import { CartProvider } from './CartContext.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 
 const App = () => {
     return (
-        <>
+        <CartProvider>
             <StickBar />
             <Header />
             <Routes>
@@ -31,7 +32,7 @@ const App = () => {
                 <Route path='/contacts' element={<Contacts />} />
             </Routes>
             <Footer />
-        </>
+        </CartProvider>
     )
 }
 

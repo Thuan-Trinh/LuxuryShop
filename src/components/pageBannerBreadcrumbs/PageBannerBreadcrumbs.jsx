@@ -11,9 +11,9 @@ const PageBannerBreadcrumbs = ({children}) => {
             </div>
             <div className="wrapper">
                 <div className="breadcrumms">
-                    <NavLink activeClassName="active" to="/"><span>Trang chủ</span></NavLink>
+                    <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')}><span>Trang chủ</span></NavLink>
                     <img src="../../assets/images/ic_arrow_right.svg" alt="" />
-                    <NavLink activeClassName="active" to="/products"><span>Sản phẩm</span></NavLink>
+                    <NavLink to="/products" className={({ isActive }) => (isActive ? 'active' : '')}><span>Sản phẩm</span></NavLink>
                     {children}
                 </div>
             </div>

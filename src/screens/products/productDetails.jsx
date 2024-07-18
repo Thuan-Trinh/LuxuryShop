@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import products from '../home/homeSection/productsArray';
 import PageBannerBreadcrumbs from '../../components/pageBannerBreadcrumbs/PageBannerBreadcrumbs';
 import ProductsSuggested from '../../components/productSuggested/productsSuggested';
-import './product_detail.css'
+import { CartContext } from '../../CartContext';
+import './product_detail.css';
+
 const ProductDetails = () => {
     const { id } = useParams();
     const product = products.find((product) => product.id === id);
@@ -24,15 +26,27 @@ const ProductDetails = () => {
 
     const [selectedImage, setSelectedImage] = useState(productImage[0]);
     const [selectedColor, setSelectedColor] = useState(productStock[0].color);
+    const [selectedSize, setSelectedSize] = useState('');
+    const [countProduct, setCountProduct] = useState(0);
     const [showBtn, setShowBtn] = useState(true);
+    const { addToCart } = useContext(CartContext);
 
     useEffect(() => {
         setSelectedImage(productImage[0]);
         setSelectedColor(productStock[0].color);
+        setSelectedSize('');
+        setCountProduct(0);
     }, [product]);
 
     const handleColorChange = (color) => {
         setSelectedColor(color);
+        setSelectedSize('');
+        setCountProduct(0);
+    };
+
+    const handleSizeChange = (size) => {
+        setSelectedSize(size);
+        setCountProduct(0);
     };
 
     const handlePreviousImage = () => {
@@ -46,16 +60,38 @@ const ProductDetails = () => {
         const nextIndex = (currentIndex + 1) % productImage.length;
         setSelectedImage(productImage[nextIndex]);
     };
+
     const handleSizeBoard = () => {
         setSelectedImage('../assets/images/size.webp');
-        setShowBtn(false)
-    }
+        setShowBtn(false);
+    };
+
     const handleShowImage = () => {
         setSelectedImage(productImage[0]);
-        setShowBtn(true)
-    }
+        setShowBtn(true);
+    };
+
+    const handleIncreaseCount = () => {
+        const selectedStock = productStock.find(stock => stock.color === selectedColor);
+        const selectedSizeStock = selectedStock.store.find(store => store.size === selectedSize);
+        if (countProduct < selectedSizeStock.stock) {
+            setCountProduct(prevCount => prevCount + 1);
+        }
+    };
+
+    const handleDecreaseCount = () => {
+        setCountProduct(prevCount => (prevCount > 0 ? prevCount - 1 : 0));
+    };
+
+    const handleAddToCart = () => {
+        if (selectedSize) {
+            addToCart(product, selectedColor, selectedSize, countProduct);
+            alert(`Bạn đã thêm ${countProduct} sản phẩm vào giỏ hàng`);
+        }
+    };
 
     const selectedProductStock = productStock.find(stock => stock.color === selectedColor);
+    const selectedSizeStock = selectedSize ? selectedProductStock.store.find(store => store.size === selectedSize) : null;
 
     return (
         <div>
@@ -85,7 +121,6 @@ const ProductDetails = () => {
                                 alt='product-img'
                                 className='product-img'
                                 onClick={handleShowImage}
-
                             />
                             <img
                                 src='../assets/images/size.webp'
@@ -126,32 +161,38 @@ const ProductDetails = () => {
                                 </button>
                             ))}
                         </div>
-                        <span className='title'>Chọn size</span>
+                        <span className='title'>Chọn size {selectedSizeStock ? `(Còn lại: ${selectedSizeStock.stock})` : ''}</span>
                         <div className="size-pick">
                             {selectedProductStock.store.map((store, index) => (
                                 <button
                                     key={`${selectedColor}-${store.size}-${index}`}
-                                    className={store.stock > 0 ? 'available' : 'disabled'}
+                                    className={store.size === selectedSize ? 'selectedSize' : (store.stock === 0 ? 'disabled' : 'available')}
+                                    onClick={() => handleSizeChange(store.size)}
+                                    disabled={store.stock === 0}
                                 >
                                     <span>{store.size}</span>
                                 </button>
                             ))}
                         </div>
+
                         <div className="cta-btns">
                             <div className="count-product">
                                 <img
-                                src="../assets/images/ic-minus.svg"
-                                alt="minus"
+                                    src="../assets/images/ic-minus.svg"
+                                    alt="minus"
+                                    onClick={handleDecreaseCount}
                                 />
-                                <span>0</span>
+                                <span>{countProduct}</span>
                                 <img
-                                src="../assets/images/ic-add.svg"
-                                alt="add"
+                                    src="../assets/images/ic-add.svg"
+                                    alt="add"
+                                    onClick={handleIncreaseCount}
                                 />
                             </div>
-                            <button className='add-product'>Thêm vào giỏ hàng</button>
+                            <button className='add-product' onClick={handleAddToCart}>Thêm vào giỏ hàng</button>
                             <button className='buy-now'>Mua ngay</button>
                         </div>
+
                         <span className='title'>Hoặc chọn phương thức mua khác</span>
                         <div className="buying-method">
                             <button className="buy-online">Mua qua sàn online</button>

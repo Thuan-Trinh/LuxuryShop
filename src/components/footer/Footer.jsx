@@ -18,7 +18,7 @@ const Footer = () => {
                     <div className="nav-footer">
                         <span onClick={() => { window, scrollTo(0, 0) }}><NavLink to='/'>Trang chủ</NavLink></span>
                         <span onClick={() => { window, scrollTo(0, 0) }}><NavLink to='/products'>Sản phẩm</NavLink></span>
-                        <span onClick={() => { window, scrollTo(0, 0) }}><NavLink to='/new-arrivals'>Hàng mới về</NavLink></span>
+                        <span onClick={() => { window, scrollTo(0, 0) }}><NavLink to='/products/new-arrivals'>Hàng mới về</NavLink></span>
                         <span onClick={() => { window, scrollTo(0, 0) }}><NavLink to='/contacts'>Liên hệ</NavLink></span>
                     </div>
                     <div className="contact">
