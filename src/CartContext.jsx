@@ -47,7 +47,7 @@ export const CartProvider = ({ children }) => {
                     if (item.product.id === productId && item.color === color && item.size === size) {
                         return {
                             ...item,
-                            quantity: item.quantity > 1 ? item.quantity - 1 : 0,
+                            quantity: item.quantity > 1 ? item.quantity - 1 : 1,
                         };
                     }
                     return item;
