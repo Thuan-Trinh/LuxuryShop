@@ -55,7 +55,7 @@
     align-self: stretch;
 }
 
-.cart-item:not(:last-child){
+.cart-item:not(:last-child) {
     padding-bottom: 24px;
     border-bottom: solid 1px #E2E8F0;
 }
@@ -164,4 +164,154 @@
     font-style: normal;
     font-weight: 700;
     line-height: 20px;
+}
+
+/* cart sumary */
+.cart-sumary {
+    display: flex;
+    width: 43%;
+    padding: 20px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    border-radius: 20px;
+    border: 2px solid var(--color-neutral-200);
+    background: var(--color-neutral-100);
+}
+
+.cart-sumary .sumaryTitle {
+    color: var(--color-neutral-900);
+    font-family: "Mulish";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+.money-calculate {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    align-self: stretch;
+}
+
+.voucherCombo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.voucherCombo .comboProducts {
+    padding-left: 16px;
+}
+
+.voucherCombo .comboProducts .combboTitle {
+    color: var(--color-neutral-500);
+    font-family: "Mulish";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.voucherCombo .comboProducts span:last-child {
+    color: var(--color-error-500);
+    text-align: right;
+    font-family: "Mulish";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.sum,
+.voucher,
+.voucherShipping,
+.comboProducts,
+.subTotal {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.money-calculate .subTitle {
+    color: var(--color-neutral-500);
+    font-family: "Mulish";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+.sum span:last-child {
+    color: var(--color-neutral-900);
+    text-align: right;
+    font-family: "Mulish";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.voucher span:last-child {
+    color: var(--color-error-500);
+    text-align: right;
+    font-family: "Mulish";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.voucherShipping span:last-child {
+    color: var(--color-success-500);
+    text-align: right;
+    font-family: "Mulish";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.subTotal span:first-child {
+    color: var(--color-neutral-900);
+    font-family: "Mulish";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+.subTotal span:last-child {
+    color: var(--color-neutral-900);
+    text-align: right;
+    font-family: "Mulish";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36px;
+}
+
+.cart-sumary .buy-now {
+    display: flex;
+    height: 52px;
+    padding: 14px 24px;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    align-self: stretch;
+    border-radius: 26px;
+    background: var(--color-neutral-900);
+
+    color: var(--color-neutral-50);
+    text-align: center;
+    font-family: "Mulish";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
 }

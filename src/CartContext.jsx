@@ -62,8 +62,24 @@ export const CartProvider = ({ children }) => {
         ));
     };
 
+    const [addressInfo, setAddressInfo] = useState(() => {
+        const savedAddress = localStorage.getItem('addressInfo');
+        return savedAddress ? JSON.parse(savedAddress) : {
+            name: "",
+            phone: "",
+            address: "",
+            province: "",
+            district: "",
+            commune: ""
+        };
+    });
+
+    useEffect(() => {
+        localStorage.setItem('addressInfo', JSON.stringify(addressInfo));
+    }, [addressInfo]);
+
     return (
-        <CartContext.Provider value={{ cart, addToCart, increaseQuantity, decreaseQuantity, removeFromCart }}>
+        <CartContext.Provider value={{ cart, addToCart, increaseQuantity, decreaseQuantity, removeFromCart, addressInfo, setAddressInfo }}>
             {children}
         </CartContext.Provider>
     );

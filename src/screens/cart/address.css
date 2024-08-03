@@ -1,6 +1,6 @@
 .delivery {
     display: flex;
-    padding: 16px 0px 24px 0px;
+    padding: 16px 0px 32px 0px;
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
@@ -9,14 +9,11 @@
 .delivery span.bigTitle {
     color: var(--color-neutral-900);
     text-align: right;
-
-    /* Body/20/Bold */
     font-family: "Mulish";
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: 28px;
-    /* 140% */
 }
 
 .form {
@@ -128,4 +125,31 @@
 
 .loading img{
     width: 60px;
+}
+.delivery .button{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.delivery button{
+    display: flex;
+    width: 30%;
+    height: 52px;
+    margin-top: 8px;
+    padding: 14px 24px;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    align-self: stretch;
+    border-radius: 26px;
+    background: var(--color-neutral-900);
+    color: var(--color-neutral-50);
+    text-align: center;
+    font-family: "Mulish";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
 }
